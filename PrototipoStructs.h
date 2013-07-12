@@ -3,6 +3,7 @@
 typedef struct{
 	char* nombre;
 	int numero;
+	int turnos;
 }Jugador;
 #endif
 
@@ -18,14 +19,17 @@ typedef struct nodo{
 void crearMatriz();
 void imprimirMatriz();
 
-void crearJugador(char* nombre, int num);
+void crearJugador(int num);
 void encolarJugador(Jugador* jug);
 Jugador* decolarJugador();
 Jugador* siguienteEnTurno();
 void flujoDeJuego();
 int getCoor(char* eje);
-int verificarGane(int jug);
+int verificarGane(Jugador* jug, int x, int y);
 int validarEntradas(int x, int y);
+int verificarVertical(int num,int y);
+int verificarHorizontal(int num,int x);
+int verificarDiagonalDer(int num);
 
 /*Globales*/
  int** matriz;

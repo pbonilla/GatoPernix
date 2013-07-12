@@ -1,17 +1,18 @@
+#define tamano 3
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "PrototipoStructs.h"
 #include "Turnos.c"
-#define tamano 3
+
 
 
 /*Funciones*/
 
 int main(int argc,char* argv){
 	crearMatriz();
-	crearJugador("Pablo",1);
-	crearJugador("Isaac",2);
+	crearJugador(1);
+	crearJugador(2);
 	flujoDeJuego();
 	return 1;
 }
