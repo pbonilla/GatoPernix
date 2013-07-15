@@ -15,8 +15,35 @@ typedef struct nodo{
 }Nodo;
 #endif
 
+#ifndef PUNTO
+#define PUNTO
+typedef struct point{
+	int coorX;
+	int coorY;
+}Punto;
+#endif
+
+#ifndef NODO_PUNTO
+#define NODO_PUNTO
+typedef struct nodoP{
+	Punto* punto;
+	nodoP* sig;
+}NodoP;
+#endif
+
+#ifndef NODO_ARBOL
+#define NODO_ARBOL
+typedef struct nodoA{
+	int** tablero;
+	int valor;
+	struct nodoA* hijo;
+	struct nodoA* hermano;
+}NodoA;
+#endif
+
+
 /*Prototipos*/
-void crearMatriz();
+int** crearMatriz();
 void imprimirMatriz();
 
 void crearJugador(int num);

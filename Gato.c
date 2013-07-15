@@ -1,4 +1,5 @@
 #define tamano 3
+#define numCPU 1;
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -10,19 +11,22 @@
 /*Funciones*/
 
 int main(int argc,char* argv){
-	crearMatriz();
+	matriz = crearMatriz();
 	crearJugador(1);
 	crearJugador(2);
 	flujoDeJuego();
 	return 1;
 }
 
-void crearMatriz(){
-	matriz = (int**)malloc(sizeof(int*)*tamano);
+int** crearMatriz(){
+	
+	int** matrix = (int**)malloc(sizeof(int*)*tamano);
 	int i;
 	for(i=0;i<tamano;i++){
-		matriz[i] = (int*)malloc(sizeof(int)*tamano);
+		matrix[i] = (int*)malloc(sizeof(int)*tamano);
 	}
+	
+	return matrix;
 }
 
 void imprimirMatriz(){
